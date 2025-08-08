@@ -14,7 +14,7 @@ function Home() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/blog/allblog", {
+        const response = await fetch("https://blogit-backend-nfpc.onrender.com/api/blog/allblog", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -43,7 +43,7 @@ function Home() {
     
     try {
       const response = await fetch(
-        `http://localhost:3000/api/blog/like/${bid}/${uid}`,
+        `https://blogit-backend-nfpc.onrender.com/api/blog/like/${bid}/${uid}`,
         {
           method: "PATCH",
           headers: {
@@ -74,20 +74,15 @@ function Home() {
         </p>
         <hr className="my-4" />
         <p>Click below to explore blogs or create your own.</p>
-        <Link
-          className="btn btn-primary btn-lg me-2"
-          to="/your-blog"
-          role="button"
-        >
-          Your Blogs
-        </Link>
-        <Link
-          className="btn btn-secondary btn-lg"
-          to="/create-blog"
-          role="button"
-        >
-          Create Blog
-        </Link>
+       <div className="d-flex flex-wrap gap-2">
+  <Link className="btn btn-primary btn-lg me-2" to="/your-blog" role="button">
+    Your Blogs
+  </Link>
+  <Link className="btn btn-secondary btn-lg" to="/create-blog" role="button">
+    Create Blog
+  </Link>
+</div>
+
       </div>
       <div
         className="row mt-5"
@@ -149,7 +144,7 @@ function Home() {
                                   (
                                     <img
                                       key={index}
-                                      src={`http://localhost:3000/${image.imageUrl.replace(
+                                      src={`https://blogit-backend-nfpc.onrender.com/${image.imageUrl.replace(
                                         /\\/g,
                                         "/"
                                       )}`}

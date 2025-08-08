@@ -5,3 +5,19 @@ display: flex;
     width: 200px;
     height: auto;
 }
+.no-blogs-wrapper {
+  min-height: calc(100vh - 200px); /* adjust based on header/footer height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.no-blogs-message {
+  text-align: center;
+  font-size: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+}

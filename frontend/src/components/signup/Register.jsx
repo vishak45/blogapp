@@ -14,7 +14,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:3000/api/user/register", {
+      const res = await axios.post("https://blogit-backend-nfpc.onrender.com/api/user/register", {
         name,
         email,
         password,

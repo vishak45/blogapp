@@ -27,7 +27,8 @@ function CreateBlog() {
     });
     try{
              await axios.post(
-      "http://localhost:3000/api/blog/create",
+              
+      "https://blogit-backend-nfpc.onrender.com/api/blog/create",
        formData ,
       {
         headers: {

@@ -21,7 +21,7 @@ function YBlogs() {
   const deleteHandle = async (x) => {
     try {
      
-      const res = await fetch(`http://localhost:3000/api/blog/delete/${x}`, {
+      const res = await fetch(`https://blogit-backend-nfpc.onrender.com/api/blog/delete/${x}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -62,7 +62,7 @@ function YBlogs() {
   
       try {
         const response = await fetch(
-          `http://localhost:3000/api/blog/like/${bid}/${uid}`,
+          `https://blogit-backend-nfpc.onrender.com/api/blog/like/${bid}/${uid}`,
           {
             method: "PATCH",
             headers: {
@@ -87,7 +87,7 @@ function YBlogs() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/blog/get", {
+        const response = await fetch("https://blogit-backend-nfpc.onrender.com/api/blog/get", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -134,7 +134,7 @@ function YBlogs() {
                     ? blog.Images.map((image) =>
                         
                           <img
-                            src={`http://localhost:3000/${image.imageUrl}`}
+                            src={`https://blogit-backend-nfpc.onrender.com/${image.imageUrl}`}
                             className="card-img-top"
                             alt={blog.title}
                             key={image._id}
@@ -207,27 +207,19 @@ function YBlogs() {
             </div>
           ))
         ) : (
-          <div
-            className="jumbotron bg-light p-5 rounded"
-            style={{
-              margin: "100px",
-            }}
-          >
-            <h1 className="display-4">No Blogs :( </h1>
-            <p className="lead">
-              Share your thoughts, read interesting posts, and connect with
-              others.
-            </p>
-            <hr className="my-4" />
-            <p>Click below to create your own.</p>
-            <Link
-              className="btn btn-secondary btn-lg"
-              to="/create-blog"
-              role="button"
-            >
-              Create Blog
-            </Link>
-          </div>
+         <div className="no-blogs-wrapper">
+  <div className="no-blogs-message">
+    <h1 className="display-6">No Blogs :( </h1>
+    <p className="lead">Share your thoughts, read interesting posts, and connect with others.</p>
+    <hr className="my-4" />
+    <p>Click below to create your own.</p>
+    <Link className="btn btn-secondary" to="/create-blog" role="button">
+      Create Blog
+    </Link>
+  </div>
+</div>
+
+
         )}
       </div>
     </div>
