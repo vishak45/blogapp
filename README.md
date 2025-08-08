@@ -1,4 +1,4 @@
-#Blogit
+# Blogit
 
 Blogit is a free, open-source platform where your ideas come to life. Whether you’re a storyteller, a photographer, or just someone with thoughts to share, BlogSphere gives you the space to express yourself.
 
